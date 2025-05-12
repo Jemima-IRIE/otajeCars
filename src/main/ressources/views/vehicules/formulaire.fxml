@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="600.0" spacing="15.0" stylesheets="@../../styles/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.ci.miage.otajeCars.controllers.vehicules.VehiculeFormulaireController">
+    <children>
+        <Label styleClass="form-title" text="Informations du Véhicule">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+        </Label>
+        <Separator />
+        <GridPane hgap="15.0" vgap="10.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="150.0" prefWidth="150.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="Immatriculation *" />
+                <Label text="Marque *" GridPane.rowIndex="1" />
+                <Label text="Modèle *" GridPane.rowIndex="2" />
+                <Label text="Année de fabrication" GridPane.rowIndex="3" />
+                <Label text="Type de véhicule" GridPane.rowIndex="4" />
+                <Label text="Statut du véhicule *" GridPane.rowIndex="5" />
+                <Label text="Date de mise en service" GridPane.rowIndex="6" />
+                <TextField fx:id="txtImmatriculation" GridPane.columnIndex="1" />
+                <TextField fx:id="txtMarque" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="txtModele" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <Spinner fx:id="spinnerAnnee" editable="true" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <ComboBox fx:id="comboType" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                <ComboBox fx:id="comboStatut" prefWidth="150.0" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+                <DatePicker fx:id="dateMiseEnService" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            </children>
+        </GridPane>
+        <Label styleClass="form-title" text="Kilométrage">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+            <VBox.margin>
+                <Insets top="10.0" />
+            </VBox.margin>
+        </Label>
+        <Separator />
+        <GridPane>
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="150.0" prefWidth="150.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="Kilométrage initial (km)" />
+                <TextField fx:id="txtKilometrageInitial" GridPane.columnIndex="1" />
+            </children>
+        </GridPane>
+        <Label styleClass="form-title" text="Documents">
+            <font>
+                <Font name="System Bold" size="16.0" />
+            </font>
+            <VBox.margin>
+                <Insets top="10.0" />
+            </VBox.margin>
+        </Label>
+        <Separator />
+        <GridPane hgap="15.0" vgap="10.0">
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="150.0" prefWidth="150.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="150.0" prefWidth="150.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+                <Label text="Carte grise" />
+                <Label text="Assurance" GridPane.rowIndex="1" />
+                <Button fx:id="btnCarteGrise" mnemonicParsing="false" onAction="#handleSelectCarteGrise" text="Parcourir..." GridPane.columnIndex="1" />
+                <Button fx:id="btnAssurance" mnemonicParsing="false" onAction="#handleSelectAssurance" text="Parcourir..." GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <Label fx:id="lblCarteGrise" text="Aucun fichier" GridPane.columnIndex="2" />
+                <Label fx:id="lblAssurance" text="Aucun fichier" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+            </children>
+        </GridPane>
+        <HBox alignment="CENTER_RIGHT" spacing="10.0">
+            <children>
+                <Button fx:id="btnAnnuler" cancelButton="true" mnemonicParsing="false" onAction="#handleAnnuler" styleClass="secondary-button" text="Annuler" />
+                <Button fx:id="btnSauvegarder" defaultButton="true" mnemonicParsing="false" onAction="#handleSauvegarder" styleClass="primary-button" text="Sauvegarder" />
+            </children>
+            <VBox.margin>
+                <Insets top="10.0" />
+            </VBox.margin>
+        </HBox>
+    </children>
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+</VBox>

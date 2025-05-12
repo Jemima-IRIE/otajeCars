@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.image.Image?>
+
+<BorderPane fx:id="mainPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@../styles/styles.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="main.java.ci.miage.otajeCars.controllers.dashboard.DashboardController">
+    <left>
+        <VBox fx:id="menuPane" alignment="TOP_CENTER" prefHeight="600.0" prefWidth="200.0" styleClass="sidebar">
+            <children>
+                <Label styleClass="logo-label" text="OTAJE Cars" textAlignment="CENTER">
+                    <font>
+                        <Font name="System Bold" size="20.0" />
+                    </font>
+                    <VBox.margin>
+                        <Insets bottom="20.0" top="20.0" />
+                    </VBox.margin>
+                </Label>
+                <HBox alignment="CENTER" styleClass="user-info">
+                    <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/user_avatar.png" />
+                            </image>
+                        </ImageView>
+                        <Label fx:id="lblUserName" text="Nom Utilisateur">
+                            <HBox.margin>
+                                <Insets left="10.0" />
+                            </HBox.margin>
+                        </Label>
+                    </children>
+                    <VBox.margin>
+                        <Insets bottom="30.0" />
+                    </VBox.margin>
+                    <padding>
+                        <Insets bottom="10.0" top="10.0" />
+                    </padding>
+                </HBox>
+                <Button fx:id="btnVehicules" mnemonicParsing="false" onAction="#handleVehicules" prefWidth="180.0" styleClass="menu-button" text="Véhicules">
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </Button>
+                <Button fx:id="btnAffectations" mnemonicParsing="false" onAction="#handleAffectations" prefWidth="180.0" styleClass="menu-button" text="Affectations">
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </Button>
+                <Button fx:id="btnMissions" mnemonicParsing="false" onAction="#handleMissions" prefWidth="180.0" styleClass="menu-button" text="Missions">
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </Button>
+                <Button fx:id="btnEntretiens" mnemonicParsing="false" onAction="#handleEntretiens" prefWidth="180.0" styleClass="menu-button" text="Entretiens">
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </Button>
+                <Button fx:id="btnReparations" mnemonicParsing="false" onAction="#handleReparations" prefWidth="180.0" styleClass="menu-button" text="Réparations">
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </Button>
+                <Button fx:id="btnUtilisateurs" mnemonicParsing="false" onAction="#handleUtilisateurs" prefWidth="180.0" styleClass="menu-button" text="Utilisateurs">
+                    <VBox.margin>
+                        <Insets bottom="5.0" />
+                    </VBox.margin>
+                </Button>
+                <VBox alignment="BOTTOM_CENTER" VBox.vgrow="ALWAYS">
+                    <children>
+                        <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#handleLogout" prefWidth="180.0" styleClass="logout-button" text="Déconnexion">
+                            <VBox.margin>
+                                <Insets bottom="20.0" />
+                            </VBox.margin>
+                        </Button>
+                    </children>
+                </VBox>
+            </children>
+        </VBox>
+    </left>
+    <center>
+        <!-- Le contenu central sera chargé dynamiquement -->
+    </center>
+</BorderPane>
